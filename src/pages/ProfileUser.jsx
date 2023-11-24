@@ -40,7 +40,7 @@ function Profile() {
   };
 
   return (
-    <Container fluid>
+    <Container>
       <Row>
         <h1 className="text-center">Profile</h1>
       </Row>
@@ -49,12 +49,12 @@ function Profile() {
         <Col md={6}>
           <Card className="p-5 shadow">
             <Row className="justify-content-center">
-              <div id="photoContainer" className="photo-container">
+              <div id="photoContainer" className={styles.photoContainer}>
                 <img
                   id="previewPhoto"
                   src={photoPreview}
                   alt="Preview"
-                  className="img-fluid preview-photo"
+                  className={styles.previewPhoto}
                 />
               </div>
             </Row>
@@ -85,17 +85,17 @@ function Profile() {
           </Card>
         </Col>
       </Row>
-
+      <Container>
       <Row className="justify-content-center align-items-center">
-        <Col lg={4} md={6} sm={12}>
+        <Col lg={4} md={4} sm={12}>
           <div className="bgWarna rounded p-3 text-center" id={styles.bgReadings}>
             <img className="img-fluid w-25" src={readings} alt="" />
             <div className="text-white fs-2 mt-3">120</div>
             <div className="text-white fs-2">Readings</div>
           </div>
         </Col>
-        <Col lg={1} sm={3}></Col>
-        <Col lg={4} md={6} sm={12}>
+        <Col lg={1} md={1} sm={3} className='col12 mt-2'></Col>
+        <Col lg={4} md={4} sm={12}>
           <div className="bgWarna rounded p-3 text-center" id={styles.bgContributions}>
             <img className="img-fluid w-25" src={contributions} alt="" />
             <div className="text-white fs-2 mt-3">10</div>
@@ -103,6 +103,7 @@ function Profile() {
           </div>
         </Col>
       </Row>
+      </Container>
       <br />
       <br />
       <br />

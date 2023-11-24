@@ -24,17 +24,17 @@
 
 
 
-.photo-container {
+.photoContainer {
   width: 250px; 
   height: 250px;
   overflow: hidden;
   border-radius: 50%;
 }
 
-.preview-photo {
+.previewPhoto {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Agar gambar tetap proporsional saat di-crop */
+  object-fit: cover; 
   border-radius: 50%;
 }
 
