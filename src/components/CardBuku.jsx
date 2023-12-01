@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import styles from "../pages/Halaman-Buku/buku.module.css";
+import styles from "../pages/Halaman-Buku/StyleBuku.module.css";
 import { useNavigate } from "react-router-dom";
 export default function CardBuku({ book }) {
   const navigate = useNavigate();
