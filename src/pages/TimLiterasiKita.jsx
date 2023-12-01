@@ -9,7 +9,7 @@ import dedy from "../assets/svg/dedy.svg";
 import instagram from "../assets/svg/iconInstagram.svg";
 import github from "../assets/svg/iconGithub.svg";
 import twitter from "../assets/svg/iconTwitter.svg";
-import linkedin from "../assets/svg/iconlinkedin.svg";
+import linkedin from "../assets/svg/iconLinkedin.svg";
 import facebook from "../assets/svg/iconFacebook.svg";
 
 const TeamLiterasiKita = () => {
