@@ -11,7 +11,7 @@ export default function Buku() {
     dataPopuler: [],
     dataAkademik: [],
     dataLainnya: [],
-  });
+  }); 
 
   // ngambil data dari api
   const getDataApi = async () => {
