@@ -12,7 +12,7 @@ import user3 from "../assets/svg/user-3.svg";
 import cardDonasi1 from "../assets/svg/cardDonasi1.svg";
 import cardDonasi2 from "../assets/svg/cardDonasi2.svg";
 import cardDonasi3 from "../assets/svg/cardDonasi3.svg";
-import goldMedal from "../assets/svg/goldMedal.svg"
+import goldMedal from "../assets/svg/goldMedal.svg";
 
 export default function Homepage() {
   const [totalDonasiUang, setTotalDonasiUang] = useState(0);
@@ -343,12 +343,63 @@ export default function Homepage() {
 
         <section>
           <div className="container mt-5">
+            <div className="row justify-content-center">
+              <div className="col-12 col-lg-6 mt-5">
+                <div className="card shadow">
+                  <div className="row mt-3 mb-3 p-3 text-center">
+                    <h3 style={{ color: "#13688D" }} className="fw-bold">
+                      Leaderboard Donasi
+                    </h3>
+                  </div>
+                  <div className="w-100 position-relative">
+                    <div id="boxBuku" className="w-100 position-absolute"></div>
+                    <table className="w-100">
+                      <tr className="text-white">
+                        <td className="numberOne">1</td>
+                        <td className="nameOne">Lee Taeyong</td>
+                        <td className="donations">
+                          25 Buku
+                          <img
+                            className="img-fluid w-25 ms-4"
+                            src={goldMedal}
+                            alt=""
+                          />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="number">2</td>
+                        <td className="name">Mark Lee</td>
+                        <td className="donations">20 Buku</td>
+                      </tr>
+                      <tr>
+                        <td className="number">3</td>
+                        <td className="name">Xiao Dejun</td>
+                        <td className="donations">18 Buku</td>
+                      </tr>
+                      <tr>
+                        <td className="number">4</td>
+                        <td className="name">Qian Kun</td>
+                        <td className="donations">17 Buku</td>
+                      </tr>
+                      <tr>
+                        <td className="number">5</td>
+                        <td className="name">Johnny Suh</td>
+                        <td className="donations">15 Buku</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className="row">
               {/* Leaderboard Donasi Buku */}
               <div className="col-12 col-lg-6 mt-5">
                 <div className="card shadow">
                   <div className="row mt-3 mb-3 p-3 text-center">
-                    <h3 style={{ color: "#13688D" }} className="fw-bold">Leaderboard Donasi Buku</h3>
+                    <h3 style={{ color: "#13688D" }} className="fw-bold">
+                      Leaderboard Donasi Buku
+                    </h3>
                   </div>
                   <div className="w-100 position-relative">
                     <div id="boxBuku" className="w-100 position-absolute"></div>
@@ -394,10 +445,15 @@ export default function Homepage() {
               <div className="col-12 col-lg-6 mt-5">
                 <div className="card shadow">
                   <div className="row mt-3 mb-3 p-3 text-center">
-                    <h3 style={{ color: "#13688D" }} className="fw-bold">Leaderboard Donasi Video</h3>
+                    <h3 style={{ color: "#13688D" }} className="fw-bold">
+                      Leaderboard Donasi Video
+                    </h3>
                   </div>
                   <div className="w-100 position-relative">
-                    <div id="boxVideo" className="w-100 position-absolute"></div>
+                    <div
+                      id="boxVideo"
+                      className="w-100 position-absolute"
+                    ></div>
                     <table className="w-100">
                       <tr className="text-white">
                         <td className="numberOne">1</td>
