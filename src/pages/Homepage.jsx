@@ -358,7 +358,7 @@ export default function Homepage() {
                         <td className="numberOne">1</td>
                         <td className="nameOne">Lee Taeyong</td>
                         <td className="donations">
-                          25 Buku
+                          25 Donasi
                           <img
                             className="img-fluid w-25 ms-4"
                             src={goldMedal}
@@ -369,22 +369,22 @@ export default function Homepage() {
                       <tr>
                         <td className="number">2</td>
                         <td className="name">Mark Lee</td>
-                        <td className="donations">20 Buku</td>
+                        <td className="donations">20 Donasi</td>
                       </tr>
                       <tr>
                         <td className="number">3</td>
                         <td className="name">Xiao Dejun</td>
-                        <td className="donations">18 Buku</td>
+                        <td className="donations">18 Donasi</td>
                       </tr>
                       <tr>
                         <td className="number">4</td>
                         <td className="name">Qian Kun</td>
-                        <td className="donations">17 Buku</td>
+                        <td className="donations">17 Donasi</td>
                       </tr>
                       <tr>
                         <td className="number">5</td>
                         <td className="name">Johnny Suh</td>
-                        <td className="donations">15 Buku</td>
+                        <td className="donations">15 Donasi</td>
                       </tr>
                     </table>
                   </div>
