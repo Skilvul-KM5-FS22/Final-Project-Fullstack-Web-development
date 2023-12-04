@@ -16,6 +16,9 @@ import goldMedal from "../assets/svg/goldMedal.svg";
 
 export default function Homepage() {
   const [totalDonasiUang, setTotalDonasiUang] = useState(0);
+  const [topDonasiBuku, setTopDonasiBuku] = useState([]);
+  const [topDonasiVideo, setTopDonasiVideo] = useState([]);
+  const [topAllDonasi, setTopAllDonasi] = useState([]);
 
   const getTotalDonasiUang = async () => {
     try {
@@ -28,8 +31,37 @@ export default function Homepage() {
     }
   };
 
+  const getTopDonasiBuku = async () => {
+    try {
+      const response = await axios.get('http://localhost:3000/donasi/top-donasi-buku');
+      setTopDonasiBuku(response.data);
+    } catch (error) {
+      console.error("Error fetching top donasi buku:", error.message);
+    }
+  };
+  const getTopDonasiVideo = async () => {
+    try {
+      const response = await axios.get('http://localhost:3000/donasi/top-donasi-videos');
+      setTopDonasiVideo(response.data);
+    } catch (error) {
+      console.error("Error fetching top donasi buku:", error.message);
+    }
+  };
+
+  const getTopAllDonasi = async () => {
+    try {
+      const response = await axios.get('http://localhost:3000/donasi/top-all-donasi');
+      setTopAllDonasi(response.data);
+    } catch (error) {
+      console.error("Error fetching top all donasi:", error.message);
+    }
+  };
+
   useEffect(() => {
     getTotalDonasiUang();
+    getTopDonasiBuku();
+    getTopDonasiVideo();
+    getTopAllDonasi();
   }, []);
 
   const formatToRupiah = (amount) => {
@@ -352,41 +384,22 @@ export default function Homepage() {
                     </h3>
                   </div>
                   <div className="w-100 position-relative">
-                    <div id="boxBuku" className="w-100 position-absolute"></div>
-                    <table className="w-100">
-                      <tr className="text-white">
-                        <td className="numberOne">1</td>
-                        <td className="nameOne">Lee Taeyong</td>
-                        <td className="donations">
-                          25 Donasi
-                          <img
-                            className="img-fluid w-25 ms-4"
-                            src={goldMedal}
-                            alt=""
-                          />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="number">2</td>
-                        <td className="name">Mark Lee</td>
-                        <td className="donations">20 Donasi</td>
-                      </tr>
-                      <tr>
-                        <td className="number">3</td>
-                        <td className="name">Xiao Dejun</td>
-                        <td className="donations">18 Donasi</td>
-                      </tr>
-                      <tr>
-                        <td className="number">4</td>
-                        <td className="name">Qian Kun</td>
-                        <td className="donations">17 Donasi</td>
-                      </tr>
-                      <tr>
-                        <td className="number">5</td>
-                        <td className="name">Johnny Suh</td>
-                        <td className="donations">15 Donasi</td>
-                      </tr>
-                    </table>
+                      <div id="boxBuku" className="w-100 position-absolute"></div>
+                      <table className="w-100" style={{ padding: '0 20px 0 200px' }}>
+                        {topAllDonasi.map((donatur, index) => (
+                          <tr key={donatur._id} className={index === 0 ? "text-white" : ""}>
+                            <td className={index === 0 ? "numberOne" : "number"}>{index + 1}</td>
+                            <td className="profileImage">
+                              <img src={donatur.profileImage} alt="Profile" style={{ width: '50px', height: '50px', borderRadius: '50%' }} />
+                            </td>
+                            <td className={index === 0 ? "nameOne" : "name"} style={{ fontSize: '1rem' }}>{donatur.nama}</td>
+                            <td className="donations" style={{ fontSize: '1rem' }}>
+                              {donatur.total_all_donasi} Donasi
+                              {index === 0 && <img className="img-fluid w-25 ms-4" src={goldMedal} alt="" />}
+                            </td>
+                          </tr>
+                        ))}
+                      </table>
                   </div>
                 </div>
               </div>
@@ -402,91 +415,50 @@ export default function Homepage() {
                     </h3>
                   </div>
                   <div className="w-100 position-relative">
-                    <div id="boxBuku" className="w-100 position-absolute"></div>
-                    <table className="w-100">
-                      <tr className="text-white">
-                        <td className="numberOne">1</td>
-                        <td className="nameOne">Lee Taeyong</td>
-                        <td className="donations">
-                          25 Buku
-                          <img
-                            className="img-fluid w-25 ms-4"
-                            src={goldMedal}
-                            alt=""
-                          />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="number">2</td>
-                        <td className="name">Mark Lee</td>
-                        <td className="donations">20 Buku</td>
-                      </tr>
-                      <tr>
-                        <td className="number">3</td>
-                        <td className="name">Xiao Dejun</td>
-                        <td className="donations">18 Buku</td>
-                      </tr>
-                      <tr>
-                        <td className="number">4</td>
-                        <td className="name">Qian Kun</td>
-                        <td className="donations">17 Buku</td>
-                      </tr>
-                      <tr>
-                        <td className="number">5</td>
-                        <td className="name">Johnny Suh</td>
-                        <td className="donations">15 Buku</td>
-                      </tr>
-                    </table>
+                      <div id="boxBuku" className="w-100 position-absolute"></div>
+                      <table className="w-100" style={{ padding: '0 20px 0 200px' }}>
+                        {topDonasiBuku.map((donatur, index) => (
+                          <tr key={donatur._id} className={index === 0 ? "text-white" : ""}>
+                            <td className={index === 0 ? "numberOne" : "number"}>{index + 1}</td>
+                            <td className="profileImage">
+                              <img src={donatur.profileImage} alt="Profile" style={{ width: '50px', height: '50px', borderRadius: '50%' }} />
+                            </td>
+                            <td className={index === 0 ? "nameOne" : "name"} style={{ fontSize: '1rem' }}>{donatur.nama}</td>
+                            <td className="donations" style={{ fontSize: '1rem' }}>
+                              {donatur.total_donasi_buku} Buku
+                              {index === 0 && <img className="img-fluid w-25 ms-4" src={goldMedal} alt="" />}
+                            </td>
+                          </tr>
+                        ))}
+                      </table>
                   </div>
-                </div>
+                  </div>
               </div>
 
               {/* Leaderboard Donasi Video */}
               <div className="col-12 col-lg-6 mt-5">
                 <div className="card shadow">
                   <div className="row mt-3 mb-3 p-3 text-center">
-                    <h3 style={{ color: "#13688D" }} className="fw-bold">
+                    <h3 style={{ color: "#13688D"}} className="fw-bold">
                       Leaderboard Donasi Video
                     </h3>
                   </div>
                   <div className="w-100 position-relative">
-                    <div
-                      id="boxVideo"
-                      className="w-100 position-absolute"
-                    ></div>
+                    <div id="boxVideo" className="w-100 position-absolute"></div>
                     <table className="w-100">
-                      <tr className="text-white">
-                        <td className="numberOne">1</td>
-                        <td className="nameOne">Lee Taeyong</td>
-                        <td className="donations">
-                          25 Video
-                          <img
-                            className="img-fluid w-25 ms-4"
-                            src={goldMedal}
-                            alt=""
-                          />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="number">2</td>
-                        <td className="name">Mark Lee</td>
-                        <td className="donations">20 Video</td>
-                      </tr>
-                      <tr>
-                        <td className="number">3</td>
-                        <td className="name">Xiao Dejun</td>
-                        <td className="donations">18 Video</td>
-                      </tr>
-                      <tr>
-                        <td className="number">4</td>
-                        <td className="name">Qian Kun</td>
-                        <td className="donations">17 Video</td>
-                      </tr>
-                      <tr>
-                        <td className="number">5</td>
-                        <td className="name">Johnny Suh</td>
-                        <td className="donations">15 Video</td>
-                      </tr>
+                      {topDonasiVideo.map((donatur, index) => (
+                        <tr key={donatur._id} className={index === 0 ? "text-white" : ""}>
+                          <td className={index === 0 ? "numberOne" : "number"}>{index + 1}</td>
+                          <td className="profileImage">
+                            <img src={donatur.profileImage} alt="Profile" style={{ width: '50px', height: '50px', borderRadius: '50%' }} />
+                          </td>
+                          <td className={index === 0 ? "nameOne" : "name"} style={{ fontSize: '1rem' }}>{donatur.nama}</td>
+                          <td className="donations" style={{ fontSize: '1rem' }}>
+                            {donatur.total_donasi_video} Video
+                            {index === 0 && <img className="img-fluid w-25 ms-4" src={goldMedal} alt="" />}
+                          </td>
+                        </tr>
+                      ))}
                     </table>
                   </div>
                 </div>

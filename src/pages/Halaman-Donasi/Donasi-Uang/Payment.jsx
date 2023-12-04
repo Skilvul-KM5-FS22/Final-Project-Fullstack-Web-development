@@ -52,7 +52,7 @@ const Payment = () => {
 
     try {
       const response = await axios.post(
-        `https://charming-cloak-boa.cyclic.app/donasi/donasiuang/${userData._id}`,
+        `http://localhost:3000/donasi/donasiuang/${userData._id}`,
         {
           full_name: formData.full_name,
           email: formData.email,
@@ -85,7 +85,7 @@ const Payment = () => {
     const fetchConfig = async () => {
       try {
         const response = await axios.get(
-          "https://charming-cloak-boa.cyclic.app/transactions/config"
+          "http://localhost:3000/transactions/config"
         );
         const script = document.createElement("script");
         script.src = "https://app.sandbox.midtrans.com/snap/snap.js";
