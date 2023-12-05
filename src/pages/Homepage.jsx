@@ -34,7 +34,7 @@ export default function Homepage() {
   const getTopDonasiBuku = async () => {
     try {
       const response = await axios.get(
-        "https://charming-cloak-boa.cyclic.app/donasi/top-donasi-buku"
+        "https://aware-cyan-raincoat.cyclic.app/donasi/top-donasi-buku"
       );
       setTopDonasiBuku(response.data);
     } catch (error) {
@@ -44,7 +44,7 @@ export default function Homepage() {
   const getTopDonasiVideo = async () => {
     try {
       const response = await axios.get(
-        "https://charming-cloak-boa.cyclic.app/donasi/top-donasi-videos"
+        "https://aware-cyan-raincoat.cyclic.app/donasi/top-donasi-videos"
       );
       setTopDonasiVideo(response.data);
     } catch (error) {
@@ -55,7 +55,7 @@ export default function Homepage() {
   const getTopAllDonasi = async () => {
     try {
       const response = await axios.get(
-        "https://charming-cloak-boa.cyclic.app/donasi/top-all-donasi"
+        "https://aware-cyan-raincoat.cyclic.app/donasi/top-all-donasi"
       );
       setTopAllDonasi(response.data);
     } catch (error) {
@@ -382,14 +382,16 @@ export default function Homepage() {
         <section>
           <div className="container mt-5">
             <div className="row justify-content-center">
+              {/* Leaderboard All Donasi*/}
               <div className="col-12 col-lg-6 mt-5">
-                <div className="card shadow">
+                <div className="card shadow" style={{ minHeight: "520px", position: "relative" }}>
                   <div className="row mt-3 mb-3 p-3 text-center">
                     <h3 style={{ color: "#13688D" }} className="fw-bold">
                       Leaderboard Donasi
                     </h3>
                   </div>
-                  <div className="w-100 position-relative">
+                  <div className="table-responsive">
+                  {/* <div className="w-100 position-relative"> */}
                     <div id="boxBuku" className="w-100 position-absolute"></div>
                     <table
                       className="w-100"
@@ -436,6 +438,7 @@ export default function Homepage() {
                         </tr>
                       ))}
                     </table>
+                  {/* </div> */}
                   </div>
                 </div>
               </div>
@@ -444,13 +447,13 @@ export default function Homepage() {
             <div className="row">
               {/* Leaderboard Donasi Buku */}
               <div className="col-12 col-lg-6 mt-5">
-                <div className="card shadow">
+                <div className="card shadow" style={{ minHeight: "520px", position: "relative" }}>
                   <div className="row mt-3 mb-3 p-3 text-center">
                     <h3 style={{ color: "#13688D" }} className="fw-bold">
                       Leaderboard Donasi Buku
                     </h3>
                   </div>
-                  <div className="w-100 position-relative">
+                  <div className="table-responsive">
                     <div id="boxBuku" className="w-100 position-absolute"></div>
                     <table
                       className="w-100"
@@ -503,16 +506,16 @@ export default function Homepage() {
 
               {/* Leaderboard Donasi Video */}
               <div className="col-12 col-lg-6 mt-5">
-                <div className="card shadow">
+                <div className="card shadow" style={{ minHeight: "520px", position: "relative" }}>
                   <div className="row mt-3 mb-3 p-3 text-center">
                     <h3 style={{ color: "#13688D" }} className="fw-bold">
                       Leaderboard Donasi Video
                     </h3>
                   </div>
-                  <div className="w-100 position-relative">
+                  <div className="table-responsive">
                     <div
                       id="boxVideo"
-                      className="w-100 position-absolute"
+                      className="w-100 position-absolute table-primary"
                     ></div>
                     <table className="w-100">
                       {topDonasiVideo.map((donatur, index) => (
