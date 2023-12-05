@@ -19,7 +19,7 @@ const BacaBuku = () => {
 
   // const getDataApiById = async () => {
   //   try {
-  //     const response = await axios(`${import.meta.env.VITE_APP_LINK_API}/books/${id}`);
+  //     const response = await axios(`https://crazy-deer-wig.cyclic.app/books/${id}`);
   //     const data = response.data.data;
   //     setBook(data);
   //   } catch (error) {

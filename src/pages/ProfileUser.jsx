@@ -58,9 +58,7 @@ export default function ProfileUser() {
       };
 
       const dataEdit = await axios.put(
-        `${import.meta.env.VITE_APP_LINK_API}/users/edit-profile/${
-          userData._id
-        }`,
+        `https://crazy-deer-wig.cyclic.app/users/edit-profile/${userData._id}`,
         formData,
         config
       );
@@ -92,9 +90,7 @@ export default function ProfileUser() {
   const getTotalDonasiByUser = async () => {
     try {
       const { data } = await axios.get(
-        `${import.meta.env.VITE_APP_LINK_API}/donasi/total-donasi/${
-          userData._id
-        }`
+        `https://crazy-deer-wig.cyclic.app/donasi/total-donasi/${userData._id}`
       );
       // console.log(data[0].total_donasi);
       setDonasi(data[0].total_donasi);
@@ -105,9 +101,7 @@ export default function ProfileUser() {
   const getTotalBookmarks = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_APP_LINK_API}/bookmark/user/total-bookmark/${
-          userData._id
-        }`
+        `https://crazy-deer-wig.cyclic.app/bookmark/user/total-bookmark/${userData._id}`
       );
       setTotalBookmarks(response.data.totalBookmarks);
     } catch (error) {
@@ -118,9 +112,7 @@ export default function ProfileUser() {
   const getBookmarkByUser = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_APP_LINK_API}/bookmark/user/data-bookmark/${
-          userData._id
-        }`
+        `https://crazy-deer-wig.cyclic.app/bookmark/user/data-bookmark/${userData._id}`
       );
       const videoIds = [];
       const bookIds = [];
@@ -171,7 +163,7 @@ export default function ProfileUser() {
       for (const videoId of videoIds) {
         try {
           const response = await axios.get(
-            `${import.meta.env.VITE_APP_LINK_API}/videos/${videoId}`
+            `https://crazy-deer-wig.cyclic.app/videos/${videoId}`
           );
           videoData.push(response.data);
         } catch (error) {
@@ -182,7 +174,7 @@ export default function ProfileUser() {
       for (const bookId of bookIds) {
         try {
           const response = await axios.get(
-            `${import.meta.env.VITE_APP_LINK_API}/books/${bookId}`
+            `https://crazy-deer-wig.cyclic.app/books/${bookId}`
           );
           bookData.push(response.data);
         } catch (error) {

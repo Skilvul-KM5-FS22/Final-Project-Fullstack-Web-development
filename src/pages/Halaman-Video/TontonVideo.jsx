@@ -13,7 +13,7 @@ export default function TontonVideo() {
 
   // const getDataApiById = async () => {
   //   try {
-  //     const response = await axios.get(`${import.meta.env.VITE_APP_LINK_API}/videos/${id}`);
+  //     const response = await axios.get(`https://crazy-deer-wig.cyclic.app/videos/${id}`);
   //     const data = response.data.data;
   //     setDataById(data);
   //   } catch (error) {

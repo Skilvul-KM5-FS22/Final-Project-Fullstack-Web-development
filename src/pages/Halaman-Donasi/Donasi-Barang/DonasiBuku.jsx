@@ -54,9 +54,7 @@ export default function DonasiBuku() {
 
       console.log(formData);
       const response = await axios.post(
-        `${import.meta.env.VITE_APP_LINK_API}/donasi/donasibuku/${
-          userData._id
-        }`,
+        `https://crazy-deer-wig.cyclic.app/donasi/donasibuku/${userData._id}`,
         data,
         config
       );

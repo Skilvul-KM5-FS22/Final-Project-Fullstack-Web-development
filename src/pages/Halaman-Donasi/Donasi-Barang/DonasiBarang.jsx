@@ -8,14 +8,14 @@ export default function DonasiBarang() {
   const [donasiBuku, setDonasiBuku] = useState(0);
   const getTotalDonasiVideo = async () => {
     const response = await axios.get(
-      `${import.meta.env.VITE_APP_LINK_API}donasi/all-donasi-videos`
+      `https://crazy-deer-wig.cyclic.appdonasi/all-donasi-videos`
     );
     // console.log(response.data[0].total_donasi_video);
     setDonasiVideo(response.data[0].total_donasi_video);
   };
   const getTotalDonasiBuku = async () => {
     const response = await axios.get(
-      `${import.meta.env.VITE_APP_LINK_API}/donasi/all-donasi-buku`
+      `https://crazy-deer-wig.cyclic.app/donasi/all-donasi-buku`
     );
     // console.log(response.data[0].total_donasi_video);
     setDonasiBuku(response.data[0].total_donasi_book);

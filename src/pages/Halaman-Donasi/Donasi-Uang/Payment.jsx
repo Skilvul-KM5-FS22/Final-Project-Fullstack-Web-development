@@ -52,9 +52,7 @@ const Payment = () => {
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_APP_LINK_API}/donasi/donasiuang/${
-          userData._id
-        }`,
+        `https://crazy-deer-wig.cyclic.app/donasi/donasiuang/${userData._id}`,
         {
           full_name: formData.full_name,
           email: formData.email,
@@ -87,7 +85,7 @@ const Payment = () => {
     const fetchConfig = async () => {
       try {
         const response = await axios.get(
-          "${import.meta.env.VITE_APP_LINK_API}/transactions/config"
+          "https://crazy-deer-wig.cyclic.app/transactions/config"
         );
         const script = document.createElement("script");
         script.src = "https://app.sandbox.midtrans.com/snap/snap.js";
