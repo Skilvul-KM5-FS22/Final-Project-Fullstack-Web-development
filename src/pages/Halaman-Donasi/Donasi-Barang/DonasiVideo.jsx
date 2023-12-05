@@ -45,7 +45,9 @@ export default function DonasiVideo() {
       };
       console.log(formData);
       const response = await axios.post(
-        `https://crazy-deer-wig.cyclic.app/donasi/donasivideo/${userData._id}`,
+        `${import.meta.env.VITE_APP_LINK_API}/donasi/donasivideo/${
+          userData._id
+        }`,
         formData,
         config
       );

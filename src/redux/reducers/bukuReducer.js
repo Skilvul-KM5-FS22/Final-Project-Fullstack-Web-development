@@ -40,7 +40,7 @@ export function fetchApiBookById(id) {
     dispatch(startFetching());
 
     const response = await axios.get(
-      `https://crazy-deer-wig.cyclic.app/books/${id}`
+      `${import.meta.env.VITE_APP_LINK_API}/books/${id}`
     );
     const data = response.data.data;
     dispatch(successGetApi(data));
