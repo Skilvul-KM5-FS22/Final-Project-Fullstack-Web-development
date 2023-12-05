@@ -19,9 +19,7 @@ export default function Video() {
 
   // ngambil data dari api
   const getDataApi = async () => {
-    const response = await axios(
-      `https://aware-cyan-raincoat.cyclic.app//videos`
-    );
+    const response = await axios(`${import.meta.env.VITE_APP_LINK_API}/videos`);
     // hasil response
     const data = response.data.data;
     // data ditambahkan data diambil dari 2 paling belakang

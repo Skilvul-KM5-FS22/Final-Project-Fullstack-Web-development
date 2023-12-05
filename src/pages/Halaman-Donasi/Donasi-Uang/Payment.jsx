@@ -52,7 +52,9 @@ const Payment = () => {
 
     try {
       const response = await axios.post(
-        `https://aware-cyan-raincoat.cyclic.app//donasi/donasiuang/${userData._id}`,
+        `${import.meta.env.VITE_APP_LINK_API}/donasi/donasiuang/${
+          userData._id
+        }`,
         {
           full_name: formData.full_name,
           email: formData.email,
@@ -85,7 +87,7 @@ const Payment = () => {
     const fetchConfig = async () => {
       try {
         const response = await axios.get(
-          "https://aware-cyan-raincoat.cyclic.app//transactions/config"
+          "${import.meta.env.VITE_APP_LINK_API}/transactions/config"
         );
         const script = document.createElement("script");
         script.src = "https://app.sandbox.midtrans.com/snap/snap.js";
