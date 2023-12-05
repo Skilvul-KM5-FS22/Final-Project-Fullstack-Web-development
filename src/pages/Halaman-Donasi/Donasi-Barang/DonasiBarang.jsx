@@ -15,7 +15,7 @@ export default function DonasiBarang() {
   };
   const getTotalDonasiBuku = async () => {
     const response = await axios.get(
-      `https://aware-cyan-raincoat.cyclic.app//donasi/all-donasi-buku`
+      `https://aware-cyan-raincoat.cyclic.app/donasi/all-donasi-buku`
     );
     // console.log(response.data[0].total_donasi_video);
     setDonasiBuku(response.data[0].total_donasi_book);

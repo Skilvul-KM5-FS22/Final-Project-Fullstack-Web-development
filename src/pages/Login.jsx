@@ -36,7 +36,7 @@ function Login() {
 
     try {
       const { data } = await axios.post(
-        `https://aware-cyan-raincoat.cyclic.app//auth/login`,
+        `https://aware-cyan-raincoat.cyclic.app/auth/login`,
         {
           email,
           password,

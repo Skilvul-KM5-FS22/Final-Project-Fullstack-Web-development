@@ -54,7 +54,7 @@ export default function DonasiBuku() {
 
       console.log(formData);
       const response = await axios.post(
-        `https://aware-cyan-raincoat.cyclic.app//donasi/donasibuku/${userData._id}`,
+        `https://aware-cyan-raincoat.cyclic.app/donasi/donasibuku/${userData._id}`,
         data,
         config
       );

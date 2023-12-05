@@ -40,7 +40,7 @@ export function fetchApiBookById(id) {
     dispatch(startFetching());
 
     const response = await axios.get(
-      `https://aware-cyan-raincoat.cyclic.app//books/${id}`
+      `https://aware-cyan-raincoat.cyclic.app/books/${id}`
     );
     const data = response.data.data;
     dispatch(successGetApi(data));

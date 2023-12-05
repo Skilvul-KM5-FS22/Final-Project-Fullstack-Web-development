@@ -20,7 +20,7 @@ export default function Video() {
   // ngambil data dari api
   const getDataApi = async () => {
     const response = await axios(
-      `https://aware-cyan-raincoat.cyclic.app//videos`
+      `https://aware-cyan-raincoat.cyclic.app/videos`
     );
     // hasil response
     const data = response.data.data;

@@ -17,7 +17,7 @@ export default function DetailBuku() {
   const getDataApiById = async () => {
     try {
       const response = await axios(
-        `https://aware-cyan-raincoat.cyclic.app//books/${id}`
+        `https://aware-cyan-raincoat.cyclic.app/books/${id}`
       );
       const data = response.data.data;
       setBook(data);
@@ -30,7 +30,7 @@ export default function DetailBuku() {
   const getDataApi = async () => {
     try {
       const response = await axios(
-        `https://aware-cyan-raincoat.cyclic.app//books`
+        `https://aware-cyan-raincoat.cyclic.app/books`
       );
       // hasil response
       const data = response.data.data;
@@ -57,7 +57,7 @@ export default function DetailBuku() {
   const getBookmarkStatus = async () => {
     try {
       const response = await axios.get(
-        `https://aware-cyan-raincoat.cyclic.app//bookmark/user/${userData._id}/${id}`
+        `https://aware-cyan-raincoat.cyclic.app/bookmark/user/${userData._id}/${id}`
       );
       setIsBookmarked(response.data.isBookmarked);
     } catch (error) {
@@ -81,7 +81,7 @@ export default function DetailBuku() {
   const toggleBookmark = async () => {
     try {
       const response = await axios.post(
-        `https://aware-cyan-raincoat.cyclic.app//bookmark/user/${userData._id}`,
+        `https://aware-cyan-raincoat.cyclic.app/bookmark/user/${userData._id}`,
         {
           bookID: id,
         }

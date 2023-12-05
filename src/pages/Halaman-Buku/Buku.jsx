@@ -16,7 +16,7 @@ export default function Buku() {
   // ngambil data dari api
   const getDataApi = async () => {
     const response = await axios(
-      `https://aware-cyan-raincoat.cyclic.app//books`
+      `https://aware-cyan-raincoat.cyclic.app/books`
     );
     // hasil response
     const data = response.data.data;

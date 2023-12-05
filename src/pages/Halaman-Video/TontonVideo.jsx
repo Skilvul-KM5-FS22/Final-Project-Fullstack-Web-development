@@ -13,7 +13,7 @@ export default function TontonVideo() {
 
   // const getDataApiById = async () => {
   //   try {
-  //     const response = await axios.get(`https://aware-cyan-raincoat.cyclic.app//videos/${id}`);
+  //     const response = await axios.get(`https://aware-cyan-raincoat.cyclic.app/videos/${id}`);
   //     const data = response.data.data;
   //     setDataById(data);
   //   } catch (error) {
