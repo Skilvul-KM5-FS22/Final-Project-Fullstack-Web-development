@@ -22,7 +22,7 @@ function ResetPassword() {
     e.preventDefault();
     try {
       const response = await axios.put(
-        "${import.meta.env.VITE_APP_LINK_API}/auth/reset-password",
+        `${import.meta.env.VITE_APP_LINK_API}/auth/reset-password`,
         resetPassword
       );
       toast.success(response.data.message);
