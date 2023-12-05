@@ -22,7 +22,7 @@ function ResetPassword() {
     e.preventDefault();
     try {
       const response = await axios.put(
-        "https://aware-cyan-raincoat.cyclic.app/auth/reset-password",
+        "https://crazy-deer-wig.cyclic.app/auth/reset-password",
         resetPassword
       );
       toast.success(response.data.message);

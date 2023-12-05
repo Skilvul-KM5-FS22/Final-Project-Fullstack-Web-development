@@ -10,7 +10,7 @@ export default function DonasiUang() {
   const getTotalDonasiUang = async () => {
     try {
       const response = await axios.get(
-        `https://aware-cyan-raincoat.cyclic.app/donasi/all-donasi-uang`
+        `https://crazy-deer-wig.cyclic.app/donasi/all-donasi-uang`
       );
       setTotalDonasiUang(response.data[0]?.total_nominal_donasi_uang || 0);
     } catch (error) {
