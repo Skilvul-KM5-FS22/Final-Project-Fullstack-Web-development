@@ -16,7 +16,7 @@ export default function DetailVideo() {
   const [isLikes, setIsLikes] = useState(false);
   const getDataApiById = async () => {
     const response = await axios(
-      `https://crazy-deer-wig.cyclic.app/videos/${id}`
+      `${import.meta.env.VITE_APP_LINK_API}/videos/${id}`
     );
     const data = response.data.data;
 
@@ -25,7 +25,7 @@ export default function DetailVideo() {
 
   // ngambil data dari api
   const getDataApi = async () => {
-    const response = await axios(`https://crazy-deer-wig.cyclic.app/videos`);
+    const response = await axios(`${import.meta.env.VITE_APP_LINK_API}/videos`);
     // hasil response
     const data = response.data.data;
     // Video Rekomendasi
@@ -46,7 +46,9 @@ export default function DetailVideo() {
   const getBookmarkStatus = async () => {
     try {
       const response = await axios.get(
-        `https://crazy-deer-wig.cyclic.app/bookmark/user/${userData._id}/${id}`
+        `${import.meta.env.VITE_APP_LINK_API}/bookmark/user/${
+          userData._id
+        }/${id}`
       );
       setIsBookmarked(response.data.isBookmarked);
     } catch (error) {
@@ -70,7 +72,7 @@ export default function DetailVideo() {
     try {
       // Lakukan permintaan ke API untuk menambah atau menghapus bookmark
       const response = await axios.post(
-        `https://crazy-deer-wig.cyclic.app/bookmark/user/${userData._id}`,
+        `${import.meta.env.VITE_APP_LINK_API}/bookmark/user/${userData._id}`,
         {
           videoID: id, // Gantilah dengan bukuID jika ini adalah halaman buku
         }

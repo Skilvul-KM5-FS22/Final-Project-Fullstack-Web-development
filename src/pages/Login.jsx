@@ -36,7 +36,7 @@ function Login() {
 
     try {
       const { data } = await axios.post(
-        `https://crazy-deer-wig.cyclic.app/auth/login`,
+        `${import.meta.env.VITE_APP_LINK_API}/auth/login`,
         {
           email,
           password,

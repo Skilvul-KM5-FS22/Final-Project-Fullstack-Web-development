@@ -17,7 +17,7 @@ export default function DetailBuku() {
   const getDataApiById = async () => {
     try {
       const response = await axios(
-        `https://crazy-deer-wig.cyclic.app/books/${id}`
+        `${import.meta.env.VITE_APP_LINK_API}/books/${id}`
       );
       const data = response.data.data;
       setBook(data);
@@ -29,7 +29,9 @@ export default function DetailBuku() {
   // ngambil data dari api
   const getDataApi = async () => {
     try {
-      const response = await axios(`https://crazy-deer-wig.cyclic.app/books`);
+      const response = await axios(
+        `${import.meta.env.VITE_APP_LINK_API}/books`
+      );
       // hasil response
       const data = response.data.data;
       // Buku Rekomendasi
@@ -55,7 +57,9 @@ export default function DetailBuku() {
   const getBookmarkStatus = async () => {
     try {
       const response = await axios.get(
-        `https://crazy-deer-wig.cyclic.app/bookmark/user/${userData._id}/${id}`
+        `${import.meta.env.VITE_APP_LINK_API}/bookmark/user/${
+          userData._id
+        }/${id}`
       );
       setIsBookmarked(response.data.isBookmarked);
     } catch (error) {
@@ -79,7 +83,7 @@ export default function DetailBuku() {
   const toggleBookmark = async () => {
     try {
       const response = await axios.post(
-        `https://crazy-deer-wig.cyclic.app/bookmark/user/${userData._id}`,
+        `${import.meta.env.VITE_APP_LINK_API}/bookmark/user/${userData._id}`,
         {
           bookID: id,
         }
