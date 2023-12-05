@@ -40,7 +40,7 @@ export function fetchApiVideoById(id) {
     dispatch(startFetching());
 
     const response = await axios.get(
-      `https://charming-cloak-boa.cyclic.app/videos/${id}`
+      `https://aware-cyan-raincoat.cyclic.app//videos/${id}`
     );
     const data = response.data.data;
     dispatch(successGetApi(data));

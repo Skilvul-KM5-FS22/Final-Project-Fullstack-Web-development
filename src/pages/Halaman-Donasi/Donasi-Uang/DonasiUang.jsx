@@ -10,7 +10,7 @@ export default function DonasiUang() {
   const getTotalDonasiUang = async () => {
     try {
       const response = await axios.get(
-        `https://charming-cloak-boa.cyclic.app/donasi/all-donasi-uang`
+        `https://aware-cyan-raincoat.cyclic.app/donasi/all-donasi-uang`
       );
       setTotalDonasiUang(response.data[0]?.total_nominal_donasi_uang || 0);
     } catch (error) {
@@ -58,7 +58,7 @@ export default function DonasiUang() {
               <p>20+ donasi terkumpul</p>
               <img src={donasiTerkumpul} alt="donasi-terkumpul" />
             </div>
-            <div className="col-12 col-md-7"></div>
+            <div className="col-12 col-md-6"></div>
             <div className="col-12 col-md-2">
               <p>Total Donasi</p>
               <h4 className="fw-bold">{formatToRupiah(totalDonasiUang)}</h4>

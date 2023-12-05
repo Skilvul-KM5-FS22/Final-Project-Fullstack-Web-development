@@ -8,14 +8,14 @@ export default function DonasiBarang() {
   const [donasiBuku, setDonasiBuku] = useState(0);
   const getTotalDonasiVideo = async () => {
     const response = await axios.get(
-      `https://charming-cloak-boa.cyclic.app/donasi/all-donasi-videos`
+      `https://aware-cyan-raincoat.cyclic.app/donasi/all-donasi-videos`
     );
     // console.log(response.data[0].total_donasi_video);
     setDonasiVideo(response.data[0].total_donasi_video);
   };
   const getTotalDonasiBuku = async () => {
     const response = await axios.get(
-      `https://charming-cloak-boa.cyclic.app/donasi/all-donasi-buku`
+      `https://aware-cyan-raincoat.cyclic.app//donasi/all-donasi-buku`
     );
     // console.log(response.data[0].total_donasi_video);
     setDonasiBuku(response.data[0].total_donasi_book);

@@ -23,7 +23,7 @@ export default function Homepage() {
   const getTotalDonasiUang = async () => {
     try {
       const response = await axios.get(
-        `https://charming-cloak-boa.cyclic.app/donasi/all-donasi-uang`
+        `https://aware-cyan-raincoat.cyclic.app//donasi/all-donasi-uang`
       );
       setTotalDonasiUang(response.data[0]?.total_nominal_donasi_uang || 0);
     } catch (error) {
@@ -294,7 +294,7 @@ export default function Homepage() {
                   </a>
                 </div>
 
-                <div className="col-lg-3 col-10 text-center text-md-center text-lg-start">
+                <div className="col-lg-4 col-10 text-center text-md-center text-lg-start">
                   <h6 className="text-warna">
                     Donasi Tersalurkan :{" "}
                     <span className="text-danger">Rp 150.000.000</span>
@@ -384,14 +384,17 @@ export default function Homepage() {
             <div className="row justify-content-center">
               {/* Leaderboard All Donasi*/}
               <div className="col-12 col-lg-6 mt-5">
-                <div className="card shadow" style={{ minHeight: "520px", position: "relative" }}>
+                <div
+                  className="card shadow"
+                  style={{ minHeight: "520px", position: "relative" }}
+                >
                   <div className="row mt-3 mb-3 p-3 text-center">
                     <h3 style={{ color: "#13688D" }} className="fw-bold">
                       Leaderboard Donasi
                     </h3>
                   </div>
                   <div className="table-responsive">
-                  {/* <div className="w-100 position-relative"> */}
+                    {/* <div className="w-100 position-relative"> */}
                     <div id="boxBuku" className="w-100 position-absolute"></div>
                     <table
                       className="w-100"
@@ -438,7 +441,7 @@ export default function Homepage() {
                         </tr>
                       ))}
                     </table>
-                  {/* </div> */}
+                    {/* </div> */}
                   </div>
                 </div>
               </div>
@@ -447,7 +450,10 @@ export default function Homepage() {
             <div className="row">
               {/* Leaderboard Donasi Buku */}
               <div className="col-12 col-lg-6 mt-5">
-                <div className="card shadow" style={{ minHeight: "520px", position: "relative" }}>
+                <div
+                  className="card shadow"
+                  style={{ minHeight: "520px", position: "relative" }}
+                >
                   <div className="row mt-3 mb-3 p-3 text-center">
                     <h3 style={{ color: "#13688D" }} className="fw-bold">
                       Leaderboard Donasi Buku
@@ -506,7 +512,10 @@ export default function Homepage() {
 
               {/* Leaderboard Donasi Video */}
               <div className="col-12 col-lg-6 mt-5">
-                <div className="card shadow" style={{ minHeight: "520px", position: "relative" }}>
+                <div
+                  className="card shadow"
+                  style={{ minHeight: "520px", position: "relative" }}
+                >
                   <div className="row mt-3 mb-3 p-3 text-center">
                     <h3 style={{ color: "#13688D" }} className="fw-bold">
                       Leaderboard Donasi Video
