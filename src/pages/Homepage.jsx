@@ -34,7 +34,7 @@ export default function Homepage() {
   const getTopDonasiBuku = async () => {
     try {
       const response = await axios.get(
-        "https://crazy-deer-wig.cyclic.appdonasi/top-donasi-buku"
+        `https://crazy-deer-wig.cyclic.app/donasi/top-donasi-buku`
       );
       setTopDonasiBuku(response.data);
     } catch (error) {
@@ -44,7 +44,7 @@ export default function Homepage() {
   const getTopDonasiVideo = async () => {
     try {
       const response = await axios.get(
-        "https://crazy-deer-wig.cyclic.appdonasi/top-donasi-videos"
+        `https://crazy-deer-wig.cyclic.app/donasi/top-donasi-videos`
       );
       setTopDonasiVideo(response.data);
     } catch (error) {
@@ -55,7 +55,7 @@ export default function Homepage() {
   const getTopAllDonasi = async () => {
     try {
       const response = await axios.get(
-        "https://crazy-deer-wig.cyclic.appdonasi/top-all-donasi"
+        `https://crazy-deer-wig.cyclic.app/donasi/top-all-donasi`
       );
       setTopAllDonasi(response.data);
     } catch (error) {

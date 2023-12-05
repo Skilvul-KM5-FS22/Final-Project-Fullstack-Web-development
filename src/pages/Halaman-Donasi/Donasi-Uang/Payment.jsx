@@ -85,7 +85,7 @@ const Payment = () => {
     const fetchConfig = async () => {
       try {
         const response = await axios.get(
-          "https://crazy-deer-wig.cyclic.app/transactions/config"
+          `https://crazy-deer-wig.cyclic.app/transactions/config`
         );
         const script = document.createElement("script");
         script.src = "https://app.sandbox.midtrans.com/snap/snap.js";

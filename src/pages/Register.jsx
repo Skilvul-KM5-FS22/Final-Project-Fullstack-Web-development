@@ -54,7 +54,7 @@ export default function Register() {
       try {
         //
         const data = await axios.post(
-          "https://crazy-deer-wig.cyclic.app/auth/register",
+          `https://crazy-deer-wig.cyclic.app/auth/register`,
           {
             nama,
             jenisKelamin,
