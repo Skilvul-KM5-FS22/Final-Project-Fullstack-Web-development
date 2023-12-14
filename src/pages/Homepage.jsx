@@ -18,6 +18,7 @@ export default function Homepage() {
   const [totalDonasiUang, setTotalDonasiUang] = useState(0);
   const [topDonasiBuku, setTopDonasiBuku] = useState([]);
   const [topDonasiVideo, setTopDonasiVideo] = useState([]);
+  const [topDonasiUang, setTopDonasiUang] = useState([]);
   const [topAllDonasi, setTopAllDonasi] = useState([]);
 
   const getTotalDonasiUang = async () => {
@@ -51,6 +52,16 @@ export default function Homepage() {
       console.error("Error fetching top donasi buku:", error.message);
     }
   };
+  const getTopDonasiUang = async () => {
+    try {
+      const response = await axios.get(
+        `${import.meta.env.VITE_APP_LINK_API}/donasi/top-donasi-uang`
+      );
+      setTopDonasiUang(response.data);
+    } catch (error) {
+      console.error("Error fetching top donasi buku:", error.message);
+    }
+  };
 
   const getTopAllDonasi = async () => {
     try {
@@ -67,6 +78,7 @@ export default function Homepage() {
     getTotalDonasiUang();
     getTopDonasiBuku();
     getTopDonasiVideo();
+    getTopDonasiUang();
     getTopAllDonasi();
   }, []);
 
@@ -383,7 +395,7 @@ export default function Homepage() {
           <div className="container mt-5">
             <div className="row justify-content-center">
               {/* Leaderboard All Donasi*/}
-              <div className="col-12 col-lg-6 mt-5">
+              <div className="col-12 col-lg-7 mt-5">
                 <div
                   className="card shadow"
                   style={{ minHeight: "520px", position: "relative" }}
@@ -413,26 +425,25 @@ export default function Homepage() {
                               src={donatur.profileImage}
                               alt="Profile"
                               style={{
-                                width: "50px",
-                                height: "50px",
+                                width: "35px",
+                                height: "35px",
                                 borderRadius: "50%",
                               }}
                             />
                           </td>
                           <td
                             className={index === 0 ? "nameOne" : "name"}
-                            style={{ fontSize: "1rem" }}
+                            style={{ fontSize: "12px" }}
                           >
                             {donatur.nama}
                           </td>
-                          <td
-                            className="donations"
-                            style={{ fontSize: "1rem" }}
-                          >
-                            {donatur.total_all_donasi} Donasi
+                          <td className="donations" style={{ fontSize: "12px" }}>
+                            {donatur.total_donasi} Donasi
+                          </td>
+                          <td>
                             {index === 0 && (
                               <img
-                                className="img-fluid w-25 ms-4"
+                                className="img-fluid w-50"
                                 src={goldMedal}
                                 alt=""
                               />
@@ -557,6 +568,68 @@ export default function Homepage() {
                             style={{ fontSize: "1rem" }}
                           >
                             {donatur.total_donasi_video} Video
+                            {index === 0 && (
+                              <img
+                                className="img-fluid w-25 ms-4"
+                                src={goldMedal}
+                                alt=""
+                              />
+                            )}
+                          </td>
+                        </tr>
+                      ))}
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              {/* Leaderboard Donasi Uang */}
+              <div className="col-12 col-lg-6 mt-5">
+                <div
+                  className="card shadow"
+                  style={{ minHeight: "520px", position: "relative" }}
+                >
+                  <div className="row mt-3 mb-3 p-3 text-center">
+                    <h3 style={{ color: "#13688D" }} className="fw-bold">
+                      Leaderboard Donasi Uang
+                    </h3>
+                  </div>
+                  <div className="table-responsive">
+                    <div
+                      id="boxVideo"
+                      className="w-100 position-absolute table-primary"
+                    ></div>
+                    <table className="w-100">
+                      {topDonasiUang.map((donatur, index) => (
+                        <tr
+                          key={donatur._id}
+                          className={index === 0 ? "text-white" : ""}
+                        >
+                          <td className={index === 0 ? "numberOne" : "number"}>
+                            {index + 1}
+                          </td>
+                          <td className="profileImage">
+                            <img
+                              src={donatur.profile_image}
+                              alt="Profile"
+                              style={{
+                                width: "50px",
+                                height: "50px",
+                                borderRadius: "50%",
+                              }}
+                            />
+                          </td>
+                          <td
+                            className={index === 0 ? "nameOne" : "name"}
+                            style={{ fontSize: "1rem" }}
+                          >
+                            {donatur.nama}
+                          </td>
+                          <td
+                            className="donations"
+                            style={{ fontSize: "1rem" }}
+                          >
+                            {formatToRupiah(donatur.total_donasi_uang)}
                             {index === 0 && (
                               <img
                                 className="img-fluid w-25 ms-4"
