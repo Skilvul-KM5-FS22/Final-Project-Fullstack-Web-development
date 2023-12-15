@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, ListGroup } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import axios from 'axios';
 
 const TransactionList = () => {
@@ -20,25 +20,57 @@ const TransactionList = () => {
     fetchTransactions();
   }, []);
 
+  const formatToRupiah = (amount) => {
+    return new Intl.NumberFormat("id-ID", {
+      style: "currency",
+      currency: "IDR",
+    }).format(amount);
+  };
+
+  const getStatusColor = (status) => {
+    switch (status) {
+      case 'Success':
+        return 'green';
+      case 'expired':
+        return 'red';
+      case 'Pending':
+        return 'orange';
+      default:
+        return 'black';
+    }
+  };
+  
+
   return (
     <div className="transaction-list">
       <h2>Detail Transaksi</h2>
-      <ListGroup>
-        {transactions.map((transaction) => (
-          <ListGroup.Item key={transaction._id}>
-            <Card className="mb-4">
-              <Card.Body>
-                <Card.Title>Order ID: {transaction.orderId}</Card.Title>
+      {transactions.length === 0 ? (
+        <p>No transactions found.</p>
+      ) : (
+        transactions.map((transaction) => (
+          <Card key={transaction._id} className="mb-3">
+            <Card.Header>
+              <strong>{transaction.tanggal}</strong>
+            </Card.Header>
+            <Card.Body className="d-flex justify-content-between">
+              <div>
+                <Card.Title>{transaction.orderId}</Card.Title>
                 <Card.Text>
-                  <strong>Tanggal:</strong> {transaction.tanggal}<br />
-                  <strong>Nominal:</strong> {transaction.nominal}<br />
-                  <strong>Status Transaksi:</strong> {transaction.status}
+                  <img src={transaction.logo_metode_pembayaran} alt="Payment Method" style={{ width: '100px', height: 'auto' }} />
                 </Card.Text>
-              </Card.Body>
-            </Card>
-          </ListGroup.Item>
-        ))}
-      </ListGroup>
+              </div>
+              <div className="text-right">
+                <Card.Text>
+                {(transaction.status === 'Pending' || transaction.status === 'Expired') ? '-' : ' '}{formatToRupiah(transaction.nominal)}
+                </Card.Text>
+                <Card.Text className='fw-semibold' style={{ color: getStatusColor(transaction.status) }}>
+                  {transaction.status}
+                </Card.Text>
+              </div>
+            </Card.Body>
+          </Card>
+        ))
+      )}
     </div>
   );
 };
