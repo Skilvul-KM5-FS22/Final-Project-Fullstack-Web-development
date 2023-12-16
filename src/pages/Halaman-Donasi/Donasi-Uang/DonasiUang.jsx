@@ -65,18 +65,27 @@ export default function DonasiUang() {
             </div>
           </div>
           <div className="row align-items-center mt-5 text-center">
-            <div className="col-12 col-md-4"></div>
-            <div className="col-12 col-md-4">
-              <Link
-                className="btn btn-light w-100 border-0 text-white rounded-pill shadow px-3 py-2 mb-5"
-                style={{ backgroundColor: " #29AB92" }}
-                to={`/halaman-donasi/donasi-uang/payment`}
-              >
-                Donasi Sekarang
-              </Link>
-            </div>
-            <div className="col-12 col-md-4"></div>
-          </div>
+  <div className="col-12 col-md-3"></div>
+  <div className="col-12 col-md-6">
+    <Link
+      className="btn btn-light w-100 border-0 text-white rounded-pill shadow px-3 py-2 mb-5"
+      style={{ backgroundColor: " #29AB92" }}
+      to={`/halaman-donasi/donasi-uang/payment`}
+    >
+      Donasi Sekarang
+    </Link>
+  </div>
+  <div className="col-12 col-md-3">
+    <Link
+      className="btn btn-light w-10 border-0 text-white rounded-pill shadow px-3 py-2 mb-5"
+      style={{ backgroundColor: " #FF6347" }}
+      to={`/halaman-donasi/donasi-uang/riwayat`}
+    >
+      Riwayat Donasi
+    </Link>
+  </div>
+  <div className="col-12 col-md-3"></div>
+</div>
         </div>
       </section>
     </div>

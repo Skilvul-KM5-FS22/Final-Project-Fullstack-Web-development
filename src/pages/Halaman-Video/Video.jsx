@@ -353,7 +353,7 @@ export default function Video() {
                   </h5>
                 </div>
                 <div className="col-md-6 text-md-end text-end col-12">
-                  <p>Selengkapnya</p>
+                  <p style={{ cursor: 'pointer' }}>Selengkapnya</p>
                 </div>
                 <div
                   className="scroll-video row row-cols-1 row-cols-lg-4 row-cols-md-3 g-lg-4 overflow-x-auto d-flex flex-nowrap mt-2 mt-lg-0 mb-5"
@@ -369,7 +369,7 @@ export default function Video() {
                   <h5 className="text-center text-md-start">Terpopuler</h5>
                 </div>
                 <div className="col-md-6 text-md-end text-end col-12">
-                  <p>Selengkapnya</p>
+                  <p style={{ cursor: 'pointer' }}>Selengkapnya</p>
                 </div>
                 <div
                   className="scroll-video row row-cols-1 row-cols-lg-4 row-cols-md-3 g-lg-4 overflow-x-auto d-flex flex-nowrap mt-2 mt-lg-0 mb-5"
@@ -385,7 +385,7 @@ export default function Video() {
                   <h5 className="text-center text-md-start">Video Akademik</h5>
                 </div>
                 <div className="col-md-6 text-md-end text-end col-12">
-                  <p>Selengkapnya</p>
+                  <p style={{ cursor: 'pointer' }}>Selengkapnya</p>
                 </div>
                 <div
                   className="scroll-video row row-cols-1 row-cols-lg-4 row-cols-md-3 g-lg-4 overflow-x-auto d-flex flex-nowrap mt-2 mt-lg-0 mb-5"
@@ -401,7 +401,7 @@ export default function Video() {
                   <h5 className="text-center text-md-start">Lainnya</h5>
                 </div>
                 <div className="col-md-6 text-md-end text-end col-12">
-                  <p>Selengkapnya</p>
+                  <p style={{ cursor: 'pointer' }}>Selengkapnya</p>
                 </div>
                 <div
                   className="scroll-video row row-cols-1 row-cols-lg-4 row-cols-md-3 g-4 overflow-x-auto d-flex flex-nowrap mt-1 mt-lg-0 mb-5"

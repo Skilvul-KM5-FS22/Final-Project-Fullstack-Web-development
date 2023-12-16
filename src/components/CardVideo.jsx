@@ -15,6 +15,7 @@ export default function CardVideo({ item }) {
       <div className="col-6">
         <div
           className=" card h-100 rounded-3"
+          style={{ cursor: 'pointer' }} 
           id="warna-card"
           onClick={handleClick}
         >

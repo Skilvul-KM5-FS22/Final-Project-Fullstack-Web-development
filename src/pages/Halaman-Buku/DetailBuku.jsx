@@ -217,7 +217,7 @@ export default function DetailBuku() {
               </h5>
             </div>
             <div className="col-md-6 text-md-end text-end col-12">
-              <p>Selengkapnya</p>
+              <p style={{ cursor: 'pointer' }}>Selengkapnya</p>
             </div>
             <div
               className="scroll-buku row row-cols-1 row-cols-lg-5 row-cols-md-3 g-lg-4 overflow-x-auto d-flex flex-nowrap mt-2 mt-lg-0 mb-5"

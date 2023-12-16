@@ -115,6 +115,7 @@ function NavbarComponent() {
                   <div className="dropdown-menu text-center">
                     <div
                       className="dropdown-item text-light link-dark fw-semibold text-center"
+                      style={{ cursor: 'pointer' }} 
                       onClick={handleProfile}
                     >
                       Profile
@@ -122,6 +123,7 @@ function NavbarComponent() {
                     <div className="dropdown-divider"></div>
                     <div
                       className="dropdown-item text-light link-dark fw-semibold text-center"
+                      style={{ cursor: 'pointer' }} 
                       onClick={handleLogout}
                     >
                       Logout

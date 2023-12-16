@@ -361,11 +361,16 @@ export default function ProfileUser() {
             className="mt-5 px-5 py-2"
             style={{ backgroundColor: "#81CDE5" }}
           >
-            <div className="scroll-video row row-cols-1 row-cols-lg-4 row-cols-md-3 g-lg-4 overflow-x-auto d-flex flex-nowrap mt-2 mt-lg-0 mb-5">
-              {dataBooks.map((item) => (
-                <CardBuku key={item.data._id} book={item.data} />
-                // console.log(item.data), console.log(item.data._id)
-              ))}
+            <div className="scroll-video row row-cols-1 row-cols-lg-4 row-cols-md-3 g-lg-4 overflow-x-auto d-flex flex-nowrap mt-1 mt-lg-0 mb-2">
+              {dataBooks.length === 0 ? (
+                <div className="w-100 text-center">
+                  <p style={{ color: 'white', fontWeight: 'bold' }}>Tidak ada buku.</p>
+                </div>
+              ) : (
+                dataBooks.map((item) => (
+                  <CardBuku key={item.data._id} book={item.data} />
+                ))
+              )}
             </div>
           </Container>
           <h3 className="text-center mt-5 mb-3">Bookmark Video</h3>
@@ -373,10 +378,16 @@ export default function ProfileUser() {
             className="mt-5 px-5 py-2"
             style={{ backgroundColor: "#81CDE5" }}
           >
-            <div className="scroll-video row row-cols-1 row-cols-lg-4 row-cols-md-3 g-lg-4 overflow-x-auto d-flex flex-nowrap mt-2 mt-lg-0 mb-5">
-              {dataVideos.map((item) => (
-                <CardVideo key={item.data._id} item={item.data} />
-              ))}
+            <div className="scroll-video row row-cols-1 row-cols-lg-4 row-cols-md-3 g-lg-4 overflow-x-auto d-flex flex-nowrap mt-1 mt-lg-0 mb-2">
+              {dataVideos.length === 0 ? (
+                <div className="w-100 text-center">
+                  <p style={{ color: 'white', fontWeight: 'bold' }}>Tidak ada video.</p>
+                </div>
+              ) : (
+                dataVideos.map((item) => (
+                  <CardVideo key={item.data._id} item={item.data} />
+                ))
+              )}
             </div>
           </Container>
           <br />

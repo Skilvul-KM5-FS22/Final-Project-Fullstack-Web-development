@@ -15,6 +15,7 @@ export default function CardBuku({ book }) {
       <div className="col-6">
         <div
           className=" card h-100 rounded-3"
+          style={{ cursor: 'pointer' }} 
           id={styles["warna-card"]}
           onClick={handleClick}
         >

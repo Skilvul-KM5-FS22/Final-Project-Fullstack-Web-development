@@ -16,7 +16,7 @@ import ProfileUser from "./pages/ProfileUser";
 import Donasi from "./pages/Halaman-Donasi/Donasi";
 import DonasiUang from "./pages/Halaman-Donasi/Donasi-Uang/DonasiUang";
 import Payment from "./pages/Halaman-Donasi/Donasi-Uang/Payment";
-import Payment1 from "./pages/Halaman-Donasi/Donasi-Uang/Payment1";
+import HistoryDonasi from "./pages/Halaman-Donasi/Donasi-Uang/HistoryDonasi";
 import DonasiBarang from "./pages/Halaman-Donasi/Donasi-Barang/DonasiBarang";
 import DonasiBuku from "./pages/Halaman-Donasi/Donasi-Barang/DonasiBuku";
 import DonasiVideo from "./pages/Halaman-Donasi/Donasi-Barang/DonasiVideo";
@@ -50,7 +50,7 @@ function App() {
         <Route path="/profile" element={<ProfileUser />} />
         <Route path="/halaman-donasi" element={<Donasi />} />
         <Route path="/halaman-donasi/donasi-uang" element={<DonasiUang />} />
-        <Route path="/halaman-donasi/donasi-uang/payment1" element={<Payment1 />} />
+        <Route path="/halaman-donasi/donasi-uang/riwayat" element={<HistoryDonasi />} />
         <Route
           path="/halaman-donasi/donasi-uang/payment"
           element={<Payment />}
