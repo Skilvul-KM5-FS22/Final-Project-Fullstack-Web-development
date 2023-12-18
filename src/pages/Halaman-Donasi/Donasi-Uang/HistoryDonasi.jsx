@@ -36,7 +36,7 @@ const HistoryDonasi = () => {
     switch (status) {
       case 'Success':
         return 'green';
-      case 'expired':
+      case 'expire':
         return 'red';
       case 'Pending':
         return 'orange';
@@ -49,7 +49,7 @@ const HistoryDonasi = () => {
     switch (status) {
       case 'Success':
         return '#a7f1a7';
-      case 'expired':
+      case 'expire':
         return '#ff9999'; 
       case 'Pending':
         return '#fff099'; 
