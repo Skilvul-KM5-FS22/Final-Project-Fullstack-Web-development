@@ -65,7 +65,7 @@ const HistoryDonasi = () => {
       <div className='mt-3 mb-5'>
         <button style={{ padding: '10px', width: "85px", margin: '5px', backgroundColor: '#008CBA', color: 'white', border: 'none', cursor: 'pointer', borderRadius: '15px' }} onClick={() => handleFilterChange('all')}>Semua</button>
         <button style={{ padding: '10px', width: "85px", margin: '5px', backgroundColor: '#4CAF50', color: 'white', border: 'none', cursor: 'pointer', borderRadius: '15px' }} onClick={() => handleFilterChange('Success')}>Berhasil</button>
-        <button style={{ padding: '10px', width: "85px", margin: '5px', backgroundColor: '#f44336', color: 'white', border: 'none', cursor: 'pointer', borderRadius: '15px' }} onClick={() => handleFilterChange('expired')}>Gagal</button>
+        <button style={{ padding: '10px', width: "85px", margin: '5px', backgroundColor: '#f44336', color: 'white', border: 'none', cursor: 'pointer', borderRadius: '15px' }} onClick={() => handleFilterChange('expire')}>Gagal</button>
         <button style={{ padding: '10px', width: "85px", margin: '5px', backgroundColor: '#e7e700', color: 'white', border: 'none', cursor: 'pointer', borderRadius: '15px' }} onClick={() => handleFilterChange('Pending')}>Pending</button>
       </div>
       {transactions.filter((transaction) => filter === 'all' || transaction.status === filter).length === 0 ? (
